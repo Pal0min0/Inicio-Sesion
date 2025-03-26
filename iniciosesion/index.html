@@ -64,7 +64,7 @@
     <div class="login-container">
         <div class="login-header">
             <span>Iniciar Sesión</span>
-            <button id="toggle-btn">☰</button>
+            <button id="toggle-btn">+</button> 
         </div>
         <div class="login-form" id="login-form">
             <input type="text" placeholder="Usuario" class="input-field">
@@ -75,7 +75,16 @@
     <script>
         document.getElementById("toggle-btn").addEventListener("click", function() {
             var form = document.getElementById("login-form");
-            form.style.display = (form.style.display === "none" || form.style.display === "") ? "flex" : "none";
+            var toggleButton = document.getElementById("toggle-btn");
+            
+           
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "flex";
+                toggleButton.textContent = "-";
+            } else {
+                form.style.display = "none";
+                toggleButton.textContent = "+"; 
+            }
         });
     </script>
 </body>
